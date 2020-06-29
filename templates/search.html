@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- 内容 -->
+        <section id="main_content">
+        <div class="content">
+          <div class="container">
+            <div class="row">
+                <div class="welcome col-md-8 col-md-offset-2">
+                    <form>
+                        <div class="input-group search">
+                            <input type="text" name="content" class="form-control search_content" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default search_button" type="submit">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /内容 -->
+{% endblock %}

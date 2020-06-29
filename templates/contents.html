@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- 内容 -->
+        <section id="main_content">
+        <div class="content">
+          <div class="container">
+            <div class="row">
+                <div class="welcome col-md-8 col-md-offset-2">
+                    <h2>{{ type }}</h2>
+                    {% for i, u, t in all_data %}
+                    <div class="thumbnail">
+                        <img class="f_p" src="{{ u }}">
+                        <div class="caption">
+                            <h3>{{ i }}</h3>
+                            <br>
+                            <p><a href="/articles/{{ i }}" class="btn btn-primary" role="button">了解更多</a></p>
+                        </div>
+                        <h6 class="text-right time">创建时间：{{ t|date:"Y-m-d H:i:s" }}</h6>
+                    </div>
+                    {% endfor %}
+
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                          {% if page_of_blogs.object_list.exists %}
+                          <li>
+                              {% if page_of_blogs.has_previous %}
+                                  <a href="?page={{ page_of_blogs.previous_page_number}}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                              {% else %}
+                                    <span aria-hidden="false">&laquo;</span>
+                              {% endif %}
+                          </li>
+                       {% for page_num in page_list %}
+                          {% if page_num == page_of_blogs.number %}
+                            <li class="active"><span>{{ page_num }}</span></li>
+                          {% else %}
+                            <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                        <li>
+                            {% if page_of_blogs.has_next %}
+                                <a href="?page={{ page_of_blogs.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            {% else %}
+                                <span aria-hidden="false">&raquo;</span>
+                            {% endif %}
+                        </li>
+                      {% endif %}
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /内容 -->
+{% endblock %}

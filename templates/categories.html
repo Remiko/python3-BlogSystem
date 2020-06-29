@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- 内容 -->
+    <section id="main_content">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="welcome col-md-8 col-md-offset-2">
+                {% load  my_imgfilter %}
+                {% for i in types %}
+                <div class="thumbnail col-xs-12 col-sm-6 col-md-6">
+                    <img src="/static/images/categories/{{ i|imgfilter }}">
+                    <div class="caption">
+                        <h3>{{ i }}</h3>
+                        <p><a href="/categories/{{ i }}" class="btn btn-primary" role="button">了解更多</a></p>
+                    </div>
+                </div>
+                {% endfor %}
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- /内容 -->
+{% endblock %}

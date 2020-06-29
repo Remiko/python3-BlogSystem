@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="main_content">
+      <div class="content">
+        <div class="container">
+            <div class="welcome col-md-8 col-md-offset-2">
+              <div id="inplace">
+              <div class="thumbnail">
+                <img class="f_p" src="/static/images/welcome.jpg">
+                <div class="caption">
+                  <h2>欢迎来到我的博客，这也是我的第一篇博客</h2>
+                  <h4>{{ first.content|safe|slice:"50" }}</h4>
+                  <p>...</p>
+                  <p><a href="/articles/{{ first }}" class="btn btn-primary" role="button">了解更多</a></p>
+                  <h6 class="text-right time">创建时间：{{ time|date:"Y-m-d H:i:s" }}</h6>
+                </div>
+            </div>
+            <div class="recommend">
+              <div class="thumbnail col-xs-12 col-sm-6 col-md-6">
+                <img src="/static/images/recommend_1.jpg">
+                <div class="caption">
+                  <h3>{{ r1|safe }}</h3>
+                  <p><a href="/articles/{{ r1 }}" class="btn btn-primary" role="button">了解更多</a></p>
+                </div>
+              </div>
+              <div class="thumbnail col-xs-12 col-sm-6 col-md-6">
+                <img src="/static/images/recommend_2.jpg">
+                <div class="caption">
+                  <h3>{{ r2|safe }}</h3>
+                  <p><a href="/articles/{{ r2 }}" class="btn btn-primary more" role="button">了解更多</a></p>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- /内容 -->
+{% endblock %}

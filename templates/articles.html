@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    {% load staticfiles %}
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico' %}" />
+    <title>rmk的博客</title>
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="index_header">
+      <div class="big_bar">
+          <div class="container-fluid">
+              <div class="row text-center">
+                  <div class="literal">
+                    <button class="btn btn-large pull-left navbar- glyphicon glyphicon-align-justify head_bnt visible-xs visible-sm" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    </button>
+                    <img class="head_p img-circle img-responsive center-block" src="/static/images/R.png" alt="图呢？">
+                    <h5>Python、Go、C/C++ 学习中...</h5>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </header>
+    <!-- /头部 -->
+
+    <!-- 导航 -->
+    <section id="index_navigation">
+        <nav>
+        <div class="container hidden-sm hidden-xs">
+          <div class="row text-center">
+                  <ul>
+                    <div class="navigation_2 col-md-4 text-right"><li><a href="//0.0.0.0:8000/">首页</a></li></div>
+                    <div class="navigation_1 col-md-2"><li><a class="contents" href="/all">全部内容</a></li></div>
+                    <div class="navigation_1 col-md-2"><li><a class="category" href="/categories">分类</a></li></div>
+                    <div class="navigation_2 col-md-4 text-left"><li><a href="/search">搜索</a></li></div>
+                  </ul>
+          </div>
+        </div>
+        <div class="container-fluid visible-xs visible-sm">
+          <div class="row text-center" id="bs-example-navbar-collapse-1">
+                  <ul>
+                    <div class="navigation_2 col-md-4"><li><a href="//0.0.0.0:8000/">首页</a></li></div>
+                    <div class="navigation_1 col-md-2"><li><a class="contents" href="/all">全部内容</a></li></div>
+                    <div class="navigation_1 col-md-2"><li><a class="category" href="/categories">分类</a></li></div>
+                    <div class="navigation_2 col-md-4"><li><a href="/search">搜索</a></li></div>
+                  </ul>
+          </div>
+        </div>
+        </nav>
+    </section>
+    <!-- /导航 -->
+
+    <!-- 内容 -->
+    <section id="main_content">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="welcome col-md-8 col-md-offset-2">
+                <div class="thumbnail">
+                    <div class="caption">
+                        {{ data.content|safe }}
+                    </div>
+                </div>
+                <div id="gitalk-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- /内容 -->
+
+    <!-- 尾部 -->
+    <section id="index_footer">
+      <div class="record">
+        <div class="container">
+          <div class="row">
+            <div class="text-center">
+              <p class="text_bottom">
+                <a class="text_bottom" href="#">Remiko的小站</a>
+                备案号 <a class="text_bottom" href="http://beian.miit.gov.cn/" target="_blank">蜀ICP备20012393号-1</a>
+                ©Copyright 2020 by
+                <a class="text_bottom" href="https://github.com/Remiko" target="_blank">Remiko</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /尾部 -->
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
