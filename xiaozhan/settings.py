@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rh14owi223h=7u+cd@@&ye1eh%^-2fnhf9hb(ifv-qp6p6+ga*'
+SECRET_KEY = '项目生成时生成的值，可以用来做模块的hash'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,11 +80,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'xiaozhan',
+        'NAME': 'mysql数据库名字',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'cdwyf12345',
+        'PASSWORD': 'mysql密码',
     }
 }
 
